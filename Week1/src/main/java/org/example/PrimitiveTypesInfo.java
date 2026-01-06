@@ -106,5 +106,16 @@ public class PrimitiveTypesInfo {
 
     }
 
+    //TODO:
+    /*
+    Complete the following function and move the code from the main() method inside the method
+    * */
+    public static void printInfo(String type)
+    {
+        // What if the user enters "int", "INT", "inT", or "double", "DOUBLE", etc.?
+        // What if the user enters a value other than the 8 primitive data types?
+        // Should we use multiple if statements, an if–else-if chain,
+        // or can you think of a better approach than using if statements?
 
+    }
 }
