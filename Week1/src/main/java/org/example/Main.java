@@ -2,10 +2,12 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
+        String str = "This is java";
 
         // Call the print method with different person details
         print(20, "John", 5.1f, "123 Main Street.", true, 'M');
         print(19, "James", 5.5f, "3333 Main Street.", false, 'F');
+
     }
 
     /**
@@ -42,8 +44,13 @@ public class Main {
         } else {
             System.out.println("Unknown Gender");
         }
-
         // Print an empty line for better output formatting
         System.out.println();
+
+
     }
+
 }
+
+
+
