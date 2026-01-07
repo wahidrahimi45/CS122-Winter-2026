@@ -88,6 +88,26 @@ public class Jan07 {
         {System.out.println(n);}
 
     }
+    /*
+        Problem Statement: Color Code Analyzer
+        You are asked to create a Java program that analyzes a number entered by the user
+        and prints a color message based on specific rules.
+        The program should:
+        •	Take one integer input from the user
+        •	Use relational, logical, and conditional operators
+        •	Decide which message to print based on the value
+        Rules (Conditions to Apply)
+        Input Value	Output
+            Value == 4	Print "Purple"
+            Value between 5 and 8 (inclusive)	Print "Red"
+            Value == 1	Print "White"
+            Value < 4	Print "Blue"
+            Value > 9	Print "Green"
+            Value == 9	Print "Yellow"
+            Value == 12	Print "Black"
+            Any other value	Print "Unknown Color"
+
+     */
     public static void colorCodeAnalyzer(int num)
     {
 
