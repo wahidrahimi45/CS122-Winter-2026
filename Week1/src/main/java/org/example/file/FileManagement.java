@@ -44,6 +44,50 @@ Compare Full-Time vs Part-Time salary averages
 
 what if the some lines have extra or missing employee information. (format missing)
  */
+
+/*
+    ########################## Class Notes #################################
+
+    -> The File class represents a file or directory path in the file system.
+    The File class does NOT read or write data.
+    It only represents and manages file paths and file information.
+
+    Common File Constructor
+    File file1 = new File("data.txt");                 // Relative path
+    File file2 = new File("C:/data/employees.txt");   // Absolute path
+    File file3 = new File("C:/data", "employees.txt");// Directory + filename
+
+
+
+    -> What is the Scanner Class?
+    The Scanner class is used to read input data from:
+    	Keyboard (System.in)
+    	Files
+    	Strings
+    It reads data token by token.
+
+    close the file
+    scanner.close();
+
+
+
+    A stream is a flow of data from one place to another.
+    Think of it like water flowing through a pipe:
+    	The source puts data into the stream
+    	The destination takes data out of the stream
+    	Data flows one direction
+    In Java:
+    	Data flows from input → program
+    	Or from program → output
+
+     Why Java calls it a stream
+    Because:
+    	Data does not arrive all at once
+    	It arrives piece by piece (byte by byte or character by character)
+
+        1- InputStream
+        2- OutputStream
+ */
 public class FileManagement {
     public static void main(String[] args) throws FileNotFoundException {
 //        int option = 1;
@@ -111,5 +155,6 @@ public class FileManagement {
         String empsal = "70000";
         double dSal = Double.parseDouble(empsal);
         System.out.println(dSal);
+        fileScanner.close();
     }
 }
