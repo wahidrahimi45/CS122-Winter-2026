@@ -90,6 +90,11 @@ what if the some lines have extra or missing employee information. (format missi
  */
 public class FileManagement {
     public static void main(String[] args) throws FileNotFoundException {
+        String name = "Jhon";
+        int age = 20;
+
+
+
 //        int option = 1;
 //        Scanner scanner = new Scanner(System.in);
 //        String name ="";
@@ -156,5 +161,6 @@ public class FileManagement {
         double dSal = Double.parseDouble(empsal);
         System.out.println(dSal);
         fileScanner.close();
+
     }
 }
