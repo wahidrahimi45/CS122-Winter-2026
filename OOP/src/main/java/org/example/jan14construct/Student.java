@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /*
     Class Note
-    this key word : To resolve naming conflicts
+    this key word: To resolve naming conflicts
     To call other constructors
     Avoiding redundant names
 
@@ -16,22 +16,104 @@ import java.util.Arrays;
     Called automatically using new
     Used to initialize object data
 
+    Types of Constructors in Java
+     Default Constructor: Provided by Java only if no constructor is written.
+     No-Argument Constructor: User-defined constructor with no parameters.
+     Parameterized Constructor: Accepts parameters to initialize values.
+     Constructor Overloading: Multiple constructors with different parameter lists.
+
  */
 public class Student {
-    private long id;
-    private String firstName; //fName, fn
+    private long id;// = 101;
+    public String firstName;// = "wahid"; //fName, fn
     private String lastName;
     private String email;
     private String major;
     private int yearLevel;
     private double gpa;
-    private String[] enrolledCourses;
-    private boolean isActive;
+    private String[] enrolledCourses;// = new String[]{"Java","Python"};
+    private boolean isActive;// = true;
 
-    public Student()
-    {
+//    // No arg constructor
+//    public Student()
+//    {
+//        System.out.println("No arg constructor is called ");
+//        this.id = 101;
+//        this.enrolledCourses = new String[]{"Java","Python"};
+//    }
+//    // Full constructor
+//    public Student(int id, String firstName, String lastName, String email, String major,
+//                   int yearLevel, double gpa, String[] enrolledCourses, boolean isActive)
+//    {
+//        this.id = id;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.major = major;
+//        this.yearLevel = yearLevel;
+//        this.gpa = gpa;
+//        this.enrolledCourses = enrolledCourses;
+//        this.isActive = isActive;
+//    }
+//
+//    public Student(String firstName, String lastName, int yearLevel, boolean isActive) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.yearLevel = yearLevel;
+//        this.isActive = isActive;
+//    }
+//
+//    // Constructor Overloading, partial
+//    public Student(int id, String firstName, String lastName)
+//    {
+//        this.id = id;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//
+//    }
 
+    // =========================
+    // 1 Full Constructor
+    // =========================
+    // Used when all data is available
+    public Student(long id, String firstName, String lastName,
+                   String email, String major, int yearLevel,
+                   double gpa, String[] enrolledCourses, boolean isActive) {
+
+        // Using setters for validation
+        setId(id);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setMajor(major);
+        setYearLevel(yearLevel);
+        setGpa(gpa);
+        setEnrolledCourses(enrolledCourses);
+        setActive(isActive);
     }
+
+    // =========================
+    // 2 Default Constructor / Constructor chaining.
+    // =========================
+    // Called when no arguments are passed
+    public Student() {
+        // calling the full constructor with (this) keyword and passing the default values to the full constructor
+        //  chaining, default values
+        this(10, "Unknown", "Unknown", "notset@email.com",
+                "Undeclared", 1, 0.0, new String[0], true);
+    }
+
+    // =========================
+    // 23 Partial Constructor
+    // =========================
+    // Used when only basic info is known / Constructor chaining.
+    public Student(long id, String firstName, String lastName) {
+        // calling the full constructor, passing the 3 values coming as parameter and rest the default values
+        this(id, firstName, lastName, "notset@email.com",
+                "Undeclared", 1, 0.0, new String[0], true);
+    }
+
+
 
 
 
@@ -144,7 +226,9 @@ public class Student {
 
         //TODO
         // print student's major, yearLevel and gpa
-
+        System.out.println("Major: "+ this.major);
+        System.out.println("Year Level: "+ this.yearLevel);
+        System.out.println("GPA: "+ this.gpa);
 //        for(String course : enrolledCourses)
 //        {
 //            System.out.print(course);
