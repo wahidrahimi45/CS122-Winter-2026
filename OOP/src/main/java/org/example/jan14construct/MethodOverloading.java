@@ -46,6 +46,7 @@ public class MethodOverloading {
     }
 
     /*
+    Class Exercise: create a method add()
     // Method 1: adds two integers
     // Method 2: adds three integers (different number of parameters)
     // Method 3: adds two doubles (different data types)

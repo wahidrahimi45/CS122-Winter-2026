@@ -271,4 +271,33 @@ public class Student {
         return true; // Name is valid
     }
 
+    //toString method
+    /*
+        The toString() method in Java is used to get a string representation of an object.
+        It is defined in the java.lang.Object class, which means every class in Java inherits this method
+     */
+
+//    public String toString()
+//    {
+//        return "Student id: "+this.id +"\n"+
+//                "Student first name: "+ this.firstName+"\n"+
+//                "Student last name: "+ this.lastName + "\n"+
+//                "Student Major: "+ this.major+"\n"+
+//                "Courses enrolled: "+ Arrays.toString(this.enrolledCourses);
+//    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", major='" + major + '\'' +
+                ", yearLevel=" + yearLevel +
+                ", gpa=" + gpa +
+                ", enrolledCourses=" + Arrays.toString(enrolledCourses) +
+                ", isActive=" + isActive +
+                '}';
+    }
 }

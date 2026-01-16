@@ -32,8 +32,17 @@ public class Main {
 //        student2.setEnrolledCourses(new String[] {"BUS101", "ECON110"});
 //        student2.setActive(false);
 
-        student1.printStudentInfo();
-        student2.printStudentInfo();
+//        student1.printStudentInfo();
+//        student2.printStudentInfo();
+
+
+//        int x = 10;
+//        System.out.println(x);
+
+
+        System.out.println(student1);
+        System.out.println();
+        System.out.println(student2);
 
     }
 
