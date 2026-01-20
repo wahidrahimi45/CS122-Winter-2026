@@ -1,81 +1,22 @@
-package org.example.jan14construct;
+package org.example.jan20;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.util.Arrays;
 
-/*
-    Class Note
-    this key word: To resolve naming conflicts
-    To call other constructors
-    Avoiding redundant names
-
-    A constructor is a special method in Java that is automatically called when an object is created.
-
-    Key Characteristics
-    Same name as the class
-    No return type (not even void)
-    Called automatically using new
-    Used to initialize object data
-
-    Types of Constructors in Java
-     Default Constructor: Provided by Java only if no constructor is written.
-     No-Argument Constructor: User-defined constructor with no parameters.
-     Parameterized Constructor: Accepts parameters to initialize values.
-     Constructor Overloading: Multiple constructors with different parameter lists.
-
- */
 public class Student {
-    private long id;// = 101;
-    public String firstName;// = "wahid"; //fName, fn
+    private long id;
+    public String firstName;
     private String lastName;
+    private LocalDate dob;
     private String email;
     private String major;
     private int yearLevel;
     private double gpa;
     private String[] enrolledCourses;// = new String[]{"Java","Python"};
-    private boolean isActive;// = true;
-
-//    // No arg constructor
-//    public Student()
-//    {
-//        System.out.println("No arg constructor is called ");
-//        this.id = 101;
-//        this.enrolledCourses = new String[]{"Java","Python"};
-//    }
-//    // Full constructor
-//    public Student(int id, String firstName, String lastName, String email, String major,
-//                   int yearLevel, double gpa, String[] enrolledCourses, boolean isActive)
-//    {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//        this.major = major;
-//        this.yearLevel = yearLevel;
-//        this.gpa = gpa;
-//        this.enrolledCourses = enrolledCourses;
-//        this.isActive = isActive;
-//    }
-//
-//    public Student(String firstName, String lastName, int yearLevel, boolean isActive) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.yearLevel = yearLevel;
-//        this.isActive = isActive;
-//    }
-//
-//    // Constructor Overloading, partial
-//    public Student(int id, String firstName, String lastName)
-//    {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//
-//    }
-
-    // =========================
-    // 1 Full Constructor
-    // =========================
-    // Used when all data is available
+    private boolean isActive;
+    private int maxCourse = 4;
+    private int courseCounter = 0;
     public Student(long id, String firstName, String lastName,
                    String email, String major, int yearLevel,
                    double gpa, String[] enrolledCourses, boolean isActive) {
@@ -90,6 +31,7 @@ public class Student {
         setGpa(gpa);
         setEnrolledCourses(enrolledCourses);
         setActive(isActive);
+        this.enrolledCourses= new String[maxCourse];
     }
 
     // =========================
@@ -112,9 +54,6 @@ public class Student {
         this(id, firstName, lastName, "notset@email.com",
                 "Undeclared", 1, 0.0, new String[0], true);
     }
-
-
-
 
 
 
@@ -162,6 +101,55 @@ public class Student {
             this.firstName = "Unknown";// default value for last name
         }
     }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(int month, int day, int year) {
+
+        //  Validate year (reasonable range)
+        if (year < 1900 || year > LocalDate.now().getYear()) {
+            System.out.println("Invalid year");
+            return;
+        }
+
+        //  Validate month (MM format)
+        if (month < 1 || month > 12) {
+            System.out.println("Invalid month");
+            return;
+        }
+
+        //  Validate day (basic range)
+        if (day < 1 || day > 31) {
+            System.out.println("Invalid day");
+            return;
+        }
+
+        /*
+         * Create LocalDate safely
+         * This validates:
+         * - Leap years
+         * - Invalid dates (Feb 30, Apr 31, etc.)
+         */
+        LocalDate studentDob;
+        try {
+            studentDob = LocalDate.of(year, month, day);
+        } catch (DateTimeException ex) {
+            System.out.println("Invalid date. Use MM/dd/yyyy format.");
+            return;
+        }
+
+        //  DOB cannot be in the future
+        if (studentDob.isAfter(LocalDate.now())) {
+            System.out.println("Date of birth cannot be in the future");
+            return;
+        }
+
+        // Assign only if all validations pass
+        this.dob = studentDob;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -205,9 +193,77 @@ public class Student {
         return enrolledCourses;
     }
 
+    // class exercise
     public void setEnrolledCourses(String[] enrolledCourses) {
+        if(enrolledCourses == null)
+        {
+            System.out.println("Courses cannot be null");
+            return;
+        }
+        if(enrolledCourses.length > maxCourse)
+        {
+            // prompt the user
+        }
+        // validate the course name
+        for(String course : enrolledCourses)
+        {
+            boolean foundCourse = false;
+            for(String c : CSDepartment.coursesOffered)
+            {
+                if(course.toLowerCase().equals(c.toLowerCase()))
+                {
+                    foundCourse = true;
+                    break;
+                }
+            }
+        }
+
         this.enrolledCourses = enrolledCourses;
     }
+
+    public void enroll(String courseName) {
+
+        //  Validate input
+        if (courseName == null || courseName.isBlank()) {
+            System.out.println("Course name cannot be empty");
+            return;
+        }
+
+        // Check if course is offered
+        boolean isOffered = false;
+        for (String course : CSDepartment.coursesOffered) {
+            if (course.equalsIgnoreCase(courseName)) {
+                isOffered = true;
+                break;
+            }
+        }
+
+        if (!isOffered) {
+            System.out.println("Invalid course name");
+            return;
+        }
+
+        // Prevent duplicate enrollment
+        for (int i = 0; i < courseCounter; i++) {
+            if (enrolledCourses[i].equalsIgnoreCase(courseName)) {
+                System.out.println("Already enrolled in " + courseName);
+                return;
+            }
+        }
+
+        // Check course limit
+        if (courseCounter >= maxCourse) {
+            System.out.println("You cannot enroll in more than " + maxCourse + " courses");
+            return;
+        }
+
+        // Enroll the student
+        enrolledCourses[courseCounter] = courseName;
+        courseCounter++;
+
+        System.out.println("Successfully enrolled in " + courseName);
+    }
+
 
     public boolean isActive() {
         return isActive;
@@ -277,27 +333,27 @@ public class Student {
         It is defined in the java.lang.Object class, which means every class in Java inherits this method
      */
 
-//    public String toString()
-//    {
-//        return "Student id: "+this.id +"\n"+
-//                "Student first name: "+ this.firstName+"\n"+
-//                "Student last name: "+ this.lastName + "\n"+
-//                "Student Major: "+ this.major+"\n"+
-//                "Courses enrolled: "+ Arrays.toString(this.enrolledCourses);
-//    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", major='" + major + '\'' +
-                ", yearLevel=" + yearLevel +
-                ", gpa=" + gpa +
-                ", enrolledCourses=" + Arrays.toString(enrolledCourses) +
-                ", isActive=" + isActive +
-                '}';
+    public String toString()
+    {
+        return "Student id: "+this.id +"\n"+
+                "Student first name: "+ this.firstName+"\n"+
+                "Student last name: "+ this.lastName + "\n"+
+                "Student Major: "+ this.major+"\n"+
+                "Courses enrolled: "+ Arrays.toString(this.enrolledCourses);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Student{" +
+//                "id=" + id +
+//                ", firstName='" + firstName + '\'' +
+//                ", lastName='" + lastName + '\'' +
+//                ", email='" + email + '\'' +
+//                ", major='" + major + '\'' +
+//                ", yearLevel=" + yearLevel +
+//                ", gpa=" + gpa +
+//                ", enrolledCourses=" + Arrays.toString(enrolledCourses) +
+//                ", isActive=" + isActive +
+//                '}';
+//    }
 }

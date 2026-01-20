@@ -1,4 +1,4 @@
-package org.example.jan14construct;
+package org.example.jan14constructor;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class Main {
                 "CS",2,3.5,wahidCourses,true);
 
 //        student1.setId(101);
-//        student1.setFirstName("Emma");
+        student1.setFirstName("Emma");
 //        student1.setLastName("Ved");
 //        student1.setEmail("emma.ved@gmail.com");
 //        student1.setMajor("Computer Science");
@@ -40,9 +40,10 @@ public class Main {
 //        System.out.println(x);
 
 
+        int x = 10;
+        System.out.println(x);
         System.out.println(student1);
-        System.out.println();
-        System.out.println(student2);
+
 
     }
 
