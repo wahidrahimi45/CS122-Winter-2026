@@ -46,6 +46,9 @@ public class Main {
         System.out.println(x);
         System.out.println(student1);
 
+
+
+
     }
     public static boolean searchCourse(String courName)
     {

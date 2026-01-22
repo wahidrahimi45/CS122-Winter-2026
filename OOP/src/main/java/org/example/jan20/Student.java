@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Student {
     private long id;
-    public String firstName;
+    private String firstName;
     private String lastName;
     private LocalDate dob;
     private String email;
@@ -178,6 +178,11 @@ public class Student {
     }
 
     public void setYearLevel(int yearLevel) {
+        if(yearLevel < 0 || yearLevel > 4)
+        {
+            System.out.println("Enter a value between 1 and 4");
+            return;
+        }
         this.yearLevel = yearLevel;
     }
 
