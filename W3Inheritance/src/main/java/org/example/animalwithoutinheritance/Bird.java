@@ -24,7 +24,6 @@ public class Bird {
     public void fly()
     {
         System.out.println(this.name+" can fly high");
-        Double x = Math.pow(2,4);
     }
 
     //Constructors

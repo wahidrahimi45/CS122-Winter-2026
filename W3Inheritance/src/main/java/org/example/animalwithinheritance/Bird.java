@@ -3,9 +3,9 @@ package org.example.animalwithinheritance;
 public class Bird extends Animal{
     private double wingSpan;
 
-    //public void fly()
+    public void fly()
     {
-        System.out.println(this.name+" can fly high");
+        System.out.println(this.getName()+" can fly high");
     }
 
     //Constructors
