@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da6e92a-1d0a-43ac-9c7e-b25da1e70eee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/OOP/src/main/java/org/example/jan14construct/MethodOverloading.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/src/main/java/org/example/jan14construct/MethodOverloading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/debugging/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/animalwithinheritance/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/animalwithinheritance/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/animalwithinheritance/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/animalwithinheritance/Bird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/animalwithinheritance/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/animalwithinheritance/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/debugging/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/debugging/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/debugging/Debugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/W3Inheritance/src/main/java/org/example/debugging/Debugging.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

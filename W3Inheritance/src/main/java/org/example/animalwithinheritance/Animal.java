@@ -24,6 +24,7 @@ public class Animal { // parent class
     //Constructors
 
     public Animal() { // default / no arg constructor
+        System.out.println("Parent default constructor got called");
     }
 
     public Animal(String name, int age, double weight, String color) {

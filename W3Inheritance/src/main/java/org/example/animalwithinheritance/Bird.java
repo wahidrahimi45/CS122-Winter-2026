@@ -11,9 +11,12 @@ public class Bird extends Animal{
     //Constructors
 
     public Bird() { // default / no arg constructor
+
+        System.out.println("Bird class no arg constructor get called");
     }
     public Bird(double wingSpan)
     {
+        super();
         this.wingSpan = wingSpan;
     }
 
