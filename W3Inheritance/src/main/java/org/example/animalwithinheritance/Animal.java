@@ -1,32 +1,23 @@
 package org.example.animalwithinheritance;
 
-public class Animal { // parent class
+/**
+ * Parent class representing common properties and behaviors
+ * shared by all animals.
+ */
+public class Animal {
+
+    // Common fields (shared by all animals)
     private String name;
     private int age;
-    private  double weight;
+    private double weight;
     private String color;
 
-
-    // Methods
-    public void eat()
-    {
-        System.out.println(this.name + " is eating");
-    }
-    public void sleep ()
-    {
-        System.out.println(this.name + " is sleeping");
-    }
-    public void makeSound()
-    {
-        System.out.println(this.name+" Make sound ");
+    // Default constructor
+    public Animal() {
+        System.out.println("Animal default constructor called");
     }
 
-    //Constructors
-
-    public Animal() { // default / no arg constructor
-        System.out.println("Parent default constructor got called");
-    }
-
+    // Parameterized constructor
     public Animal(String name, int age, double weight, String color) {
         this.name = name;
         this.age = age;
@@ -34,37 +25,41 @@ public class Animal { // parent class
         this.color = color;
     }
 
-    //Getters and Setters
+    // Getters & Setters (Encapsulation)
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public double getWeight() {
         return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
     }
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    // Common behaviors
+    public void eat() {
+        System.out.println(name + " is eating");
     }
 
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+
+    public void makeSound() {
+        System.out.println(name + " makes a sound");
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + "\n" +
+                "Age: " + age + "\n" +
+                "Weight: " + weight + " lb\n" +
+                "Color: " + color + "\n";
+    }
 }

@@ -1,32 +1,34 @@
 package org.example.animalwithinheritance;
 
-public class Bird extends Animal{
+/**
+ * Bird is a child class of Animal.
+ * It inherits common fields and adds bird-specific behavior.
+ */
+public class Bird extends Animal {
+
     private double wingSpan;
 
-    public void fly()
-    {
-        System.out.println(this.getName()+" can fly high");
-    }
-
-    //Constructors
-
-    public Bird() { // default / no arg constructor
-
-        System.out.println("Bird class no arg constructor get called");
-    }
-    public Bird(double wingSpan)
-    {
-        super();
+    public Bird(String name, int age, double weight, String color, double wingSpan) {
+        super(name, age, weight, color); // initialize parent fields
         this.wingSpan = wingSpan;
     }
 
-    //Getters and Setters
-
-    public double getWingSpan() {
-        return wingSpan;
+    public void fly() {
+        System.out.println(getName() + " is flying");
     }
 
-    public void setWingSpan(double wingSpan) {
-        this.wingSpan = wingSpan;
+    @Override
+    public void sleep() {
+        System.out.println(getName() + " sleeps on a tree");
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println(getName() + " chirps");
+    }
+
+    @Override
+    public String toString() {
+        return "Wing Span: " + wingSpan + " ft\n" + super.toString();
     }
 }

@@ -1,32 +1,28 @@
 package org.example.animalwithinheritance;
 
-public class Cat {
-    private String name;
-    private int age;
-    private  double weight;
-    private String color;
-    private int clawSharpness;
-    private double size;
+/**
+ * Cat is a child class of Animal.
+ * Adds cat-specific behavior.
+ */
+public class Cat extends Animal {
 
-    // Methods
-    public void eat()
-    {
-        System.out.println(this.name + " is eating");
+    private int clawSharpness;
+
+    public Cat(String name, int age, double weight, String color, int clawSharpness) {
+        super(name, age, weight, color);
+        this.clawSharpness = clawSharpness;
     }
-    public void sleep ()
-    {
-        System.out.println(this.name + " is sleeping");
+
+    public void scratch() {
+        System.out.println(getName() + " scratches with sharp claws");
     }
-    public void makeSound()
-    {
-        System.out.println(this.name+" Make sound like Mew Mew");
+
+    public void climb() {
+        System.out.println(getName() + " climbs a tree");
     }
-    public void scratch()
-    {
-        System.out.println(this.name+" scratches the objects");
-    }
-    public void climb()
-    {
-        System.out.println(this.name +" can climb a tree");
+
+    @Override
+    public void makeSound() {
+        System.out.println(getName() + " says Meow Meow");
     }
 }
