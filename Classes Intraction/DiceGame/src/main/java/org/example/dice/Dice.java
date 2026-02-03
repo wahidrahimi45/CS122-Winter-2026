@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Dice {
     private int side;
-    private int sideValue;
+    protected int sideValue;
     private final int[] accecptedSides = {6,8,10,16,20};
 
     // Constructors

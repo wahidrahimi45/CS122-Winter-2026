@@ -1,24 +1,43 @@
 package org.example;
 
+import org.example.dice.ColoredDice;
 import org.example.dice.Dice;
+import org.example.dice.WeightedDice;
+import org.example.players.Player;
 
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Dice sixSidedDice = new Dice(20);
-//        Dice eightSidedDice = new Dice(8);
-//        Dice oneSidedDice = new Dice(5);
-//        Dice myDice = new Dice();
+        //Dice sixSidedDice = new Dice(6);
+        //Dice sixSidedDice2 = new Dice(6);
+        final int side = 20;
+        WeightedDice weightedDice = new WeightedDice(side);
+        ColoredDice coloredDice = new ColoredDice(side,"Red");
 
-//        System.out.println(sixSidedDice);
-//        System.out.println(eightSidedDice);
-//        System.out.println(oneSidedDice);
-//        System.out.println(myDice);
+        Player john = new Player("John", weightedDice);
+        Player alex = new Player("Alex", coloredDice);
 
-        //sixSidedDice.roll();
-        System.out.println(sixSidedDice.roll10Times());
+        john.play(10);
+        System.out.println("-----------------------------");
+        alex.play(10);
+
+        System.out.println("John Score: "+ john.getScore());
+        System.out.println("Alex Score: "+ alex.getScore());
+
+        announceTheWinner(john, alex);
 
 
+    }
+
+    public static void announceTheWinner(Player player1, Player player2)
+    {
+        if(player1.getScore() > player2.getScore())
+        {
+            System.out.println(player1.getName()+" is the winner");
+        }
+        else {
+            System.out.println(player2.getName()+" is the winner");
+        }
     }
 }
