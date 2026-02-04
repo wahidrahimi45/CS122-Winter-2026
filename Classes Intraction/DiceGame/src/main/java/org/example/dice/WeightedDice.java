@@ -2,28 +2,21 @@ package org.example.dice;
 
 import java.util.Random;
 
-public class WeightedDice extends Dice{
-    public WeightedDice(int side)
-    {
+// Rolls twice and returns the higher value
+public class WeightedDice extends Dice {
+
+    private static final Random RANDOM = new Random();
+
+    public WeightedDice(int side) {
         super(side);
     }
 
-    public int roll()
-    {
-        Random random = new Random();
-        int value1 = random.nextInt(1, this.getSide()+1);
-        int value2 = random.nextInt(1, this.getSide()+1);
-        int max = 0;
-        if(value1 > value2)
-        {
-            max = value1;
-        }
-        else {
-            max = value2;
-        }
-        this.sideValue = max;
+    @Override
+    public int roll() {
+        int roll1 = RANDOM.nextInt(getSide()) + 1;
+        int roll2 = RANDOM.nextInt(getSide()) + 1;
 
-        System.out.println("Rolled a "+ this.getSide()+" sided dice and got: "+max );
-        return max;
+        sideValue = Math.max(roll1, roll2);
+        return sideValue;
     }
 }

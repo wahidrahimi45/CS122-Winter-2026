@@ -1,32 +1,29 @@
 package org.example.dice;
 
-import java.util.Random;
+public class ColoredDice extends Dice {
 
-public class ColoredDice extends Dice{
     private String color;
 
-    public ColoredDice(int side, String color)
-    {
+    public ColoredDice() {
+        super();
+    }
+
+    public ColoredDice(int side, String color) {
         super(side);
         this.color = color;
     }
 
-    public int roll()
-    {
-        Random random = new Random();
-        int value = random.nextInt(1, this.getSide()+1);
-        this.sideValue = value;
-        System.out.println("Rolled a "+this.color+" "+ this.getSide()+" sided dice and got: "+ value);
-        return value;
+    @Override
+    public int roll() {
+        return super.roll(); // reuse Dice logic
     }
 
-    public String getColor()
-    {
-        return this.color;
+    public String getColor() {
+        return color;
     }
 
-    public String toString()
-    {
-        return this.color +" "+ super.toString();
+    @Override
+    public String toString() {
+        return color + " " + super.toString();
     }
 }

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da6e92a-1d0a-43ac-9c7e-b25da1e70eee" name="Changes" comment="" />
+    <list default="true" id="6da6e92a-1d0a-43ac-9c7e-b25da1e70eee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/FixedDice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/LuckyDice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/game/MultiPlayerGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/game/TwoPlayerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/ColoredDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/ColoredDice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/WeightedDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/dice/WeightedDice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes Intraction/DiceGame/src/main/java/org/example/players/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,43 +1,48 @@
 package org.example;
 
 import org.example.dice.ColoredDice;
-import org.example.dice.Dice;
+import org.example.dice.FixedDice;
 import org.example.dice.WeightedDice;
+import org.example.game.MultiPlayerGame;
+import org.example.game.TwoPlayerGame;
 import org.example.players.Player;
-
-import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        //Dice sixSidedDice = new Dice(6);
-        //Dice sixSidedDice2 = new Dice(6);
-        final int side = 20;
-        WeightedDice weightedDice = new WeightedDice(side);
-        ColoredDice coloredDice = new ColoredDice(side,"Red");
 
-        Player john = new Player("John", weightedDice);
-        Player alex = new Player("Alex", coloredDice);
+        // ===============================
+        // GAME CONFIGURATION
+        // ===============================
+        final int SIDE = 20;   // Number of sides on each dice
+        final int ROUND = 10;  // Number of rounds each player plays
 
-        john.play(10);
-        System.out.println("-----------------------------");
-        alex.play(10);
+        // ===============================
+        // CREATE DICE OBJECTS
+        // ===============================
+        // Each dice object represents a different rolling behavior
+        ColoredDice redDice1 = new ColoredDice(SIDE, "Red");
+        ColoredDice redDice2 = new ColoredDice(SIDE, "Red");
+        FixedDice yellowFixedDice = new FixedDice("Yellow", SIDE);
 
-        System.out.println("John Score: "+ john.getScore());
-        System.out.println("Alex Score: "+ alex.getScore());
+        // ===============================
+        // CREATE PLAYERS
+        // ===============================
+        // Each player is assigned a dice
+        Player john = new Player("John", redDice2);
+        Player alex = new Player("Alex", redDice1);
+        Player ahmad = new Player("Ahmad", redDice1);
+        Player abdulaziz = new Player("Abdul Aziz", yellowFixedDice);
+        Player bhodan = new Player("Bhodan", redDice2);
 
-        announceTheWinner(john, alex);
+        // Store all players in an array
+        Player[] players = {john, alex, ahmad, abdulaziz, bhodan};
 
+        // ===============================
+        // START MULTI-PLAYER GAME
+        // ===============================
+        MultiPlayerGame game = new MultiPlayerGame(players, ROUND);
+        game.playGame();
+        game.announceWinner();
 
-    }
-
-    public static void announceTheWinner(Player player1, Player player2)
-    {
-        if(player1.getScore() > player2.getScore())
-        {
-            System.out.println(player1.getName()+" is the winner");
-        }
-        else {
-            System.out.println(player2.getName()+" is the winner");
-        }
     }
 }

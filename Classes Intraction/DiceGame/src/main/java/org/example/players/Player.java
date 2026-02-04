@@ -1,11 +1,12 @@
 package org.example.players;
 
+import org.example.dice.ColoredDice;
 import org.example.dice.Dice;
 
 public class Player {
     private String name;
     private int score;
-    private Dice dice;
+    private Dice dice; // Has-a relationship
 
 
 
@@ -33,8 +34,8 @@ public class Player {
     public void play(int round)
     {
         for (int i = 0; i < round; i++) {
-            System.out.print(this.name+" ");
             int value = this.dice.roll();
+            System.out.println(this.getName()+" Rolled a "+ dice.getSide()+" sided dice and got "+ value);
             this.score = this.score + value;
         }
     }

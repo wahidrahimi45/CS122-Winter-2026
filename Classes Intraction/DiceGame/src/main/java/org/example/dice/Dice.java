@@ -3,55 +3,43 @@ package org.example.dice;
 import java.util.Random;
 
 public class Dice {
-    private int side;
-    protected int sideValue;
-    private final int[] accecptedSides = {6,8,10,16,20};
 
-    // Constructors
-    public Dice()
-    {
+    private static final Random RANDOM = new Random(); // shared Random
+    private int side;          // number of sides
+    protected int sideValue;   // last rolled value
+
+    private final int[] acceptedSides = {6, 8, 10, 16, 20};
+
+    public Dice() {
         this.side = 6;
     }
-    public Dice(int side)
-    {
-        boolean found = false;
-        for (int i = 0; i < accecptedSides.length; i++) {
-            if(accecptedSides[i] == side)
-            {
+
+    public Dice(int side) {
+        for (int s : acceptedSides) {
+            if (s == side) {
                 this.side = side;
-                found = true;
-                break;
+                return;
             }
         }
-        if(!found)
-        {
-            System.out.println("Invalid side. set to a default six sided dice");
-            this.side = 6;
-        }
-
+        System.out.println("Invalid side. Defaulting to 6.");
+        this.side = 6;
     }
 
-    // Methods
-    public int roll()
-    {
-        Random random = new Random();
-        int value = random.nextInt(1, this.side+1);
-        this.sideValue = value;
-        System.out.println("Rolled a "+ this.getSide()+" sided dice and got: "+ value);
-        return value;
+    // Rolls the dice once
+    public int roll() {
+        sideValue = RANDOM.nextInt(side) + 1;
+        return sideValue;
     }
-    public int roll10Times()
-    {
+
+    // Rolls the dice 10 times and sums results
+    public int roll10Times() {
         int result = 0;
-        for (int i = 0; i <10; i++) {
-            int value = roll();
-            result += value;
-            System.out.println("Rolled a "+ this.getSide()+" sided dice and got "+ value);
+        for (int i = 0; i < 10; i++) {
+            result += roll();
         }
         return result;
     }
 
-    // Getter
     public int getSide() {
         return side;
     }
@@ -61,8 +49,7 @@ public class Dice {
     }
 
     @Override
-    public String toString()
-    {
-        return this.side+" sided dice";
+    public String toString() {
+        return side + " sided dice";
     }
 }
