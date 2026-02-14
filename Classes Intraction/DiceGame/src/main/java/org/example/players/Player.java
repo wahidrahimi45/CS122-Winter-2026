@@ -2,6 +2,7 @@ package org.example.players;
 
 import org.example.dice.ColoredDice;
 import org.example.dice.Dice;
+import org.example.dice.StandardDice;
 
 public class Player {
     private String name;
@@ -14,7 +15,8 @@ public class Player {
     public Player()
     {
         this.name = "Unknown Name";
-        this.dice = new Dice(6);
+        //this.dice = new Dice(6);
+        this.dice = new StandardDice(6);
     }
     public Player(String name, Dice dice)
     {

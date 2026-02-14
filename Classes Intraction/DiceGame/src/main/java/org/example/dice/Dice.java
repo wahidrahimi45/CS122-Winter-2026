@@ -2,7 +2,7 @@ package org.example.dice;
 
 import java.util.Random;
 
-public class Dice {
+public abstract class Dice {
 
     private static final Random RANDOM = new Random(); // shared Random
     private int side;          // number of sides
@@ -26,11 +26,13 @@ public class Dice {
     }
 
     // Rolls the dice once
-    public int roll() {
-        sideValue = RANDOM.nextInt(side) + 1;
-        return sideValue;
-    }
+//    public int roll() {
+//        sideValue = RANDOM.nextInt(side) + 1;
+//        return sideValue;
+//    }
 
+    // Abstract method
+    public abstract int roll();
     // Rolls the dice 10 times and sums results
     public int roll10Times() {
         int result = 0;
@@ -51,5 +53,10 @@ public class Dice {
     @Override
     public String toString() {
         return side + " sided dice";
+    }
+
+    public Random getRandom()
+    {
+        return new Random();
     }
 }

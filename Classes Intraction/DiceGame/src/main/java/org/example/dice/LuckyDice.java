@@ -1,5 +1,8 @@
 package org.example.dice;
 
+import org.example.enums.Color;
+
+import javax.swing.*;
 import java.util.Random;
 
 // Always rolls at least 70% of max side
@@ -7,7 +10,7 @@ public class LuckyDice extends ColoredDice {
 
     private static final Random RANDOM = new Random();
 
-    public LuckyDice(int side, String color) {
+    public LuckyDice(int side, Color color) {
         super(side, color);
     }
 

@@ -1,5 +1,7 @@
 package org.example.dice;
 
+import org.example.enums.Color;
+
 // Always rolls the maximum side value
 public class FixedDice extends ColoredDice {
 
@@ -7,7 +9,7 @@ public class FixedDice extends ColoredDice {
         super();
     }
 
-    public FixedDice(String color, int side) {
+    public FixedDice(Color color, int side) {
         super(side, color);
     }
 

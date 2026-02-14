@@ -1,8 +1,10 @@
 package org.example;
 
 import org.example.dice.ColoredDice;
+import org.example.dice.Dice;
 import org.example.dice.FixedDice;
 import org.example.dice.WeightedDice;
+import org.example.enums.Color;
 import org.example.game.MultiPlayerGame;
 import org.example.game.TwoPlayerGame;
 import org.example.players.Player;
@@ -20,9 +22,10 @@ public class Main {
         // CREATE DICE OBJECTS
         // ===============================
         // Each dice object represents a different rolling behavior
-        ColoredDice redDice1 = new ColoredDice(SIDE, "Red");
-        ColoredDice redDice2 = new ColoredDice(SIDE, "Red");
-        FixedDice yellowFixedDice = new FixedDice("Yellow", SIDE);
+        ColoredDice redDice1 = new ColoredDice(SIDE, Color.RED);
+        ColoredDice redDice2 = new ColoredDice(SIDE, Color.BLUE);
+        FixedDice yellowFixedDice = new FixedDice(Color.YELLOW, SIDE);
+
 
         // ===============================
         // CREATE PLAYERS
