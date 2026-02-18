@@ -1,0 +1,26 @@
+If a class has even ONE abstract method → class must be abstract
+Child must implement ALL abstract methods
+Abstract class can have 0 abstract methods
+Can Abstract Classes Have Constructors?
+Can Abstract Methods Be Static?
+
+Key Takeaways (Memorize This)
+•	Abstract classes cannot be instantiated
+•	Used for IS-A relationship
+•	Can contain:
+o	Fields
+o	Constructors
+o	Abstract + concrete methods
+•	Child classes must implement abstract methods
+•	Perfect for partial abstraction
+
+
+They meant to represent a “general idea”?
+ Yes — exactly.
+Examples:
+•	Animal
+•	Vehicle
+•	Employee
+•	PaymentMethod
+•	NotificationService
+These are categories, not real instances.
