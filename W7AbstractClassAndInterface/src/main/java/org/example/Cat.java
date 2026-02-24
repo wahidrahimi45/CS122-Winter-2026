@@ -15,6 +15,16 @@ public class Cat extends Mammal {
     }
 
     @Override
+    public void eat() {
+
+    }
+
+    @Override
+    public void sleep() {
+
+    }
+
+    @Override
     public void makeSound() {
         System.out.println(name + " says: Meow!");
     }

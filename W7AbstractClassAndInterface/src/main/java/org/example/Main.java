@@ -1,24 +1,26 @@
 package org.example;
 
+import org.example.inteface.Trainable;
+
 public class Main {
     public static void main(String[] args) {
         // 2 Animal Objects
-        Animal animal1 = new Animal("GenericAnimal1", 5, 20.5, "Brown");
-        Animal animal2 = new Animal("GenericAnimal2", 3, 12.2, "White");
-
-
-        // 2 Mammal Objects
-        Mammal mammal1 = new Mammal("GenericMammal1", 4, 25.0, "Black", true);
-        Mammal mammal2 = new Mammal("GenericMammal2", 6, 40.0, "Gray", true);
-
-
-        // 2 Bird Objects
-        Bird bird1 = new Bird("GenericBird1", 2, 5.5, "Yellow", 0.8, true, 25.0);
-        Bird bird2 = new Bird("GenericBird2", 1, 3.2, "Blue", 0.6, true, 18.0);
+//        Animal animal1 = new Animal("GenericAnimal1", 5, 20.5, "Brown");
+//        Animal animal2 = new Animal("GenericAnimal2", 3, 12.2, "White");
+//
+//
+//        // 2 Mammal Objects
+//        Mammal mammal1 = new Mammal("GenericMammal1", 4, 25.0, "Black", true);
+//        Mammal mammal2 = new Mammal("GenericMammal2", 6, 40.0, "Gray", true);
+//
+//
+//        // 2 Bird Objects
+//        Bird bird1 = new Bird("GenericBird1", 2, 5.5, "Yellow", 0.8, true, 25.0);
+//        Bird bird2 = new Bird("GenericBird2", 1, 3.2, "Blue", 0.6, true, 18.0);
 
 
         // 5 Dog Objects
-        Dog dog1 = new Dog("Buddy", 3, 18.5, "Brown", true, "Golden Retriever");
+        Animal dog1 = new Dog("Buddy", 3, 18.5, "Brown", true, "Golden Retriever");
         Dog dog2 = new Dog("Max", 5, 22.0, "Black", true, "Labrador");
         Dog dog3 = new Dog("Rocky", 2, 16.0, "White", true, "Husky");
         Dog dog4 = new Dog("Charlie", 4, 20.0, "Golden", true, "Beagle");
@@ -41,6 +43,7 @@ public class Main {
         Eagle eagle5 = new Eagle("Flash", 2, 4.8, "White", 1.6, true, 95.0);
 
 
+
         // 5 Duck Objects
         Duck duck1 = new Duck("Daffy", 2, 3.5, "White", 0.5, true, 40.0);
         Duck duck2 = new Duck("Donald", 3, 3.8, "White", 0.6, true, 42.0);
@@ -48,16 +51,20 @@ public class Main {
         Duck duck4 = new Duck("Lucky", 4, 4.0, "Gray", 0.7, true, 45.0);
         Duck duck5 = new Duck("Sunny", 2, 3.3, "Yellow", 0.5, true, 39.0);
 
+        int age = 20;
+        int[] numbers = {2,3,4,5};
 
+        Animal[] catsAndEagles = {cat1, cat2, eagle2, eagle1, duck1, duck2, dog3};
+        printAnilaDetails(catsAndEagles);
         // Calling methods to verify
-        animal1.showInfo();
-        System.out.println("-----------------------");
-
-        mammal1.showInfo();
-        System.out.println("-----------------------");
-
-        bird1.showInfo();
-        System.out.println("-----------------------");
+//        animal1.showInfo();
+//        System.out.println("-----------------------");
+//
+//        mammal1.showInfo();
+//        System.out.println("-----------------------");
+//
+//        bird1.showInfo();
+//        System.out.println("-----------------------");
 
         dog1.showInfo();
         System.out.println("-----------------------");
@@ -71,5 +78,14 @@ public class Main {
         duck1.showInfo();
         System.out.println("-----------------------");
 
+
+        Trainable[] trainables = {dog2, dog5};
+    }
+
+    public static void printAnilaDetails (Animal[] animals)
+    {
+        for (int i = 0; i < animals.length; i++) {
+            animals[i].eat();
+        }
     }
 }

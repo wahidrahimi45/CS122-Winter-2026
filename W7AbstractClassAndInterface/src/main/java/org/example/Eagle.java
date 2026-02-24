@@ -13,6 +13,16 @@ public class Eagle extends Bird {
     }
 
     @Override
+    public void eat() {
+
+    }
+
+    @Override
+    public void sleep() {
+
+    }
+
+    @Override
     public void makeSound() {
         System.out.println(name + " makes eagle sound.");
     }

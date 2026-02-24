@@ -4,7 +4,7 @@ package org.example;
  * Animal class is the ROOT parent class
  * All animals share these common properties and behaviors
  */
-public class Animal {
+public abstract class Animal {
 
     // Common properties shared by ALL animals
     protected String name;
@@ -21,13 +21,15 @@ public class Animal {
     }
 
     // Common behaviors
-    public void eat() {
-        System.out.println(name + " is eating.");
-    }
+//    public void eat() {
+//        System.out.println(name + " is eating.");
+//    }
+    public abstract void eat();
 
-    public void sleep() {
-        System.out.println(name + " is sleeping.");
-    }
+//    public void sleep() {
+//        System.out.println(name + " is sleeping.");
+//    }
+    public abstract void sleep();
 
     public void makeSound() {
         System.out.println(name + " makes a sound.");

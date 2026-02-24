@@ -4,7 +4,7 @@ package org.example;
  * Mammal is a child of Animal
  * Mammals inherit Animal properties and add their own
  */
-public class Mammal extends Animal {
+public abstract class Mammal extends Animal {
 
     // Specific property for Mammals
     protected boolean hasFur;

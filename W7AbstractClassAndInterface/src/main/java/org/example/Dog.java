@@ -1,10 +1,13 @@
 package org.example;
 
+import org.example.inteface.Swimmable;
+import org.example.inteface.Trainable;
+
 /**
  * Dog is a concrete class
  * Dog inherits Animal -> Mammal -> Dog
  */
-public class Dog extends Mammal {
+public class Dog extends Mammal implements Swimmable, Trainable {
 
     private String breed;
 
@@ -20,6 +23,16 @@ public class Dog extends Mammal {
     }
 
     @Override
+    public void eat() {
+
+    }
+
+    @Override
+    public void sleep() {
+
+    }
+
+    @Override
     public void makeSound() {
         System.out.println(name + " says: Woof Woof!");
     }
@@ -28,5 +41,16 @@ public class Dog extends Mammal {
     public void showInfo() {
         super.showInfo();
         System.out.println("Breed: " + breed);
+    }
+
+    @Override
+    public void swim()
+    {
+        System.out.println("Dog can swim");
+    }
+    @Override
+    public void train()
+    {
+        System.out.println("Dogs can be trained");
     }
 }
