@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        int[] numbers = {12,44,22};
 
         try {
             // put the code that we want monitor, risky code
@@ -17,7 +17,10 @@ public class Main {
             int result = numerator / denominator;
             System.out.println("Result: "+ result);
 
-        }catch (ArithmeticException ex)
+            System.out.println(numbers[6]);
+
+        }
+        catch (ArithmeticException ex)
         {
             // Exception handler
             System.out.println("Error happened: "+ ex.getMessage());
@@ -25,7 +28,10 @@ public class Main {
         {
             System.out.println("Please enter a number not a string: "+ ex.getMessage());
         }
-
+        catch (Exception ex)
+        {
+            System.out.println("Error: "+ ex.getMessage());
+        }
 
 
         System.out.println("Some other important process");
