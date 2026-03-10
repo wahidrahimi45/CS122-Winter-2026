@@ -1,0 +1,20 @@
+This is a line
+This is another line
+3
+3.6
+Inside the try with block
+Inside the try with block
+Inside the try with block
+org.example.filewriting.Student@b4c966a
+Inside the try with block
+Student Name: ALex
+Student ID: 1001
+Inside the try with block
+Student Name: ALex
+Student ID: 1001
+Inside the try with block
+Student Name: ALex
+Student ID: 1001
+Inside the try with block
+Student Name: ALex
+Student ID: 1001

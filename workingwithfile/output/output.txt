@@ -74,3 +74,11 @@ A
 End of the file
 4.5
 ---------------------------
+Hello
+Welcome to
+Java
+33
+A
+End of the file
+4.5
+---------------------------
