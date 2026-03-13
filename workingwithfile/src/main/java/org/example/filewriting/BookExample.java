@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class BookExample {
     public static void main(String[] args) {
 
-        
+
         //Read from the book and write to a new file
         ArrayList<String> eBookList = new ArrayList<>();
         int lineCounter = 0;
